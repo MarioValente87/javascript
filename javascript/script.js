@@ -93,3 +93,30 @@ const retrocederImagen = () => {
 };
 
 btnRetrocede.addEventListener("click", retrocederImagen);
+
+/* VENTANA MODAL */
+const modal = document.getElementById("modal");
+const overlay = document.getElementById("overlay");
+const btnCloseModal = document.querySelector(".close-modal");
+const btnsOpenModal = document.querySelector(".show-modal");
+
+const openModal = () => {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+const closeModal = () => {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+btnsOpenModal.addEventListener("click", openModal);
+btnCloseModal.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+
+document.addEventListener("keydown", (e) => {
+  console.log(e.key);
+  if (e.key === "Escape") {
+    if (!modal.classList.contains("hidden")) {
+      closeModal();
+    }
+  }
+});
