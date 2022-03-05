@@ -1,0 +1,62 @@
+/*RESET*/
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Components */
+
+/* Site styles */
+
+.banner {
+  background: url("../imagenes/agostina1520.jpg") fixed center/cover;
+  height: 700px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+
+.bannerInfo {
+  padding: 0.3em;
+  position: absolute;
+  width: 100%;
+  max-width: 700px;
+  text-align: right;
+  color: white;
+  margin: auto;
+}
+
+.bannerTitle {
+  line-height: 1.5;
+  font-size: 2em;
+  font-family: sans-serif;
+}
+.bannerP {
+  line-height: 2;
+  font-size: 0.9em;
+  font-family: sans-serif;
+}
