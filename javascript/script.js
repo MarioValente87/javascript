@@ -27,18 +27,28 @@ const producto3 = new Producto(
 const productos = [producto1, producto2, producto3];
 let divProductos = document.getElementById("idProductos");
 
-/* productos.forEach((productosEnArray, indice) => {
+productos.forEach((productosEnArray, indice) => {
   divProductos.innerHTML += `<div class="card" id="productosEnArray${indice}" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">${productosEnArray.producto}</h5>
     <p class="card-text">${productosEnArray.descripcion}</p>
     <p> ${productosEnArray.precio}</p>
-    <button id="idAddCart" class="btn btn-primary">Agregar al Carrito</button>
+    <button onClick="agregarProducto(${indice})" name="idAddCart" class="btn btn-primary">Agregar al Carrito</button>
   </div>
 </div>
 `;
-}); */
+});
+
+let agregarProducto = (indice) => {
+  let carrito = document.getElementById("idCarrito");
+  let nuevo = document.createElement("div");
+  nuevo.innerText = productos[indice].producto + " " + productos[indice].precio;
+  nuevo.classList.add("fondoAzul");
+  carrito.appendChild(nuevo);
+
+  /* console.log(productos[indice].descripcion); */
+};
 
 /* galeria. por algun motivo si descomento lo de productos no anda la galeria. Supongo que debe ser porque no funciona bien lo de productos */
 
@@ -66,9 +76,9 @@ imagenes.forEach((imagen) => {
 
 /*Cierra el Lightbox */
 
-btnCierra.addEventListener("click", () => {
+/* btnCierra.addEventListener("click", () => {
   lightbox.style.display = "none";
-});
+}); */
 
 /* Adelanta la imagen*/
 
@@ -80,7 +90,7 @@ const adelantaImagen = () => {
   indiceImagen++;
 };
 
-btnAdelanta.addEventListener("click", adelantaImagen);
+/* btnAdelanta.addEventListener("click", adelantaImagen); */
 
 /*Retrocede la Imagen*/
 
@@ -92,7 +102,7 @@ const retrocederImagen = () => {
   indiceImagen--;
 };
 
-btnRetrocede.addEventListener("click", retrocederImagen);
+/* btnRetrocede.addEventListener("click", retrocederImagen); */
 
 /* VENTANA MODAL */
 const modal = document.getElementById("modal");
@@ -108,10 +118,10 @@ const closeModal = () => {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
 };
-btnsOpenModal.addEventListener("click", openModal);
-btnCloseModal.addEventListener("click", closeModal);
+/* btnsOpenModal.addEventListener("click", openModal); */
+/* btnCloseModal.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
-
+ */
 document.addEventListener("keydown", (e) => {
   console.log(e.key);
   if (e.key === "Escape") {

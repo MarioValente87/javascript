@@ -209,7 +209,7 @@ button {
   background: none;
 }
 
-/* CLASSES TO MAKE MODAL WORK */
+/* CLASES PARA QUE FUNQUE EL MODAL */
 .hidden {
   display: none;
 }
@@ -235,4 +235,8 @@ button {
   height: 100%;
   backdrop-filter: url(filters.svg#filter) blur(4px) saturate(150%);
   z-index: 5;
+}
+
+.fondoAzul {
+  color: aqua;
 }
