@@ -10,10 +10,16 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../Estilos/stylo.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <title>Document</title>
   </head>
-  <body id="idBody">
+  <body>
+    <main>
     <header>
     <nav class="p-3 mb-0 bg-info text-dark">
       <ul class="nav justify-content-end">
@@ -32,19 +38,29 @@
         <li class="nav-item">
           <a class="nav-link" href="./productos/productos.html">Productos</a>
         </li>
+        <span class="cant--carrito">0</span>
+        <li>
+          <svg class="btn-carrito" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <circle cx="6" cy="19" r="2" />
+            <circle cx="17" cy="19" r="2" />
+            <path d="M17 17h-11v-14h-2" />
+            <path d="M6 5l14 1l-1 7h-13" />
+          </svg>
+        </li>
       </ul>
     </nav>
-    <div id="idProductos2" class="row"></div>
-    </header>
-    <main>
-      <div id="idProductos2" class="row"></div>
-      <section>
-        <h2>CARRITO</h2>
-        <div id="idCarrito" class="carrito"></div>
-      </section>
-    </main>
+  </header>
+    <div class="container">
+      <div class="sidebar">
+        
+      </div>
+      
+      <div id="main"></div>
+      
+    </div>
 
-    
+    </main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
