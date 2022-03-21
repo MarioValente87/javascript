@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "nombre": "Home Sweet Home",
+    "precio": 2000,
+    "img": "img/homeSeetHome1.jpeg"
+  },
+
+  {
+    "id": 2,
+    "nombre": "Cajonera",
+    "precio": 5000,
+    "img": "img/cajonera2.jpeg"
+  },
+  {
+    "id": 3,
+    "nombre": "Porta Masetas",
+    "precio": 2500,
+    "img": "img/portamaseta3.jpeg"
+  },
+  {
+    "id": 4,
+    "nombre": "Platos decorados",
+    "precio": 1500,
+    "img": "img/platos4.jpeg"
+  },
+  {
+    "id": 5,
+    "nombre": "Marco personalizado",
+    "precio": 3000,
+    "img": "img/marco5.jpeg"
+  },
+  {
+    "id": 6,
+    "nombre": "Tabla y Portavasos",
+    "precio": 2800,
+    "img": "img/tablaYPortavasos6.jpeg"
+  },
+  {
+    "id": 7,
+    "nombre": "Desayunador",
+    "precio": 2500,
+    "img": "img/desayunador7.jpeg"
+  },
+  {
+    "id": 8,
+    "nombre": "Tabla Perrito",
+    "precio": 500,
+    "img": "img/tabla8.jpeg"
+  },
+  {
+    "id": 9,
+    "nombre": "Posa Platos",
+    "precio": 750,
+    "img": "img/posaPlatos9.jpeg"
+  }
+]

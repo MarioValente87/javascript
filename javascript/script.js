@@ -1,24 +1,3 @@
-const productos = [
-  {
-    nombre: 'Pincel',
-    precio: 350,
-    imagen: '../productos/img/pincel.jpg',
-    id: 0,
-  },
-  {
-    nombre: 'celular',
-    precio: 250,
-    imagen: '../productos/img/celular.jpg',
-    id: 1,
-  },
-  {
-    nombre: 'Microfono',
-    precio: 450,
-    imagen: '../productos/img/microfono.jpg',
-    id: 2,
-  },
-];
-
 const container = document.querySelector('.container');
 const main = document.querySelector('#main');
 const sidebar = document.querySelector('.sidebar');
@@ -41,10 +20,15 @@ btnCarrito.addEventListener('click', () => {
 });
 
 /* CARGA DE PRODUCTOS */
-const cargarProductos = () => {
+async function cargarProductos1() {
+  const response = await fetch('../productos/productos.json');
+  return await response.json();
+}
+
+cargarProductos1().then((productos) => {
   productos.forEach((element) => {
     main.innerHTML += ` <div class="caja">
-    <img class="caja--img" src="${element.imagen}">
+    <img class="caja--img" src="../productos/${element.img}">
     <div class="caja--datos">
     <p class="nombre">${element.nombre}</p>
     <p class="precio">$ <span> ${element.precio}</span></p>
@@ -53,14 +37,14 @@ const cargarProductos = () => {
     </div>
     `;
   });
-  const btnAgregar = document.querySelectorAll('.btn-agregar');
-  btnAgregar.forEach((e) =>
-    e.addEventListener('click', (e) => {
-      let cardPadre = e.target.parentElement;
-      agregarAlCarrito(cardPadre);
-    })
-  );
-};
+});
+const btnAgregar = document.querySelectorAll('.btn-agregar');
+btnAgregar.forEach((e) =>
+  e.addEventListener('click', (e) => {
+    let cardPadre = e.target.parentElement;
+    agregarAlCarrito(cardPadre);
+  })
+);
 //como vamos a usar varias veces la alerta, conviene tenerla en una función
 const swalToast = (texto, color, posicion) => {
   Swal.fire({
@@ -160,60 +144,6 @@ const aumentarNumeroCantidadCarrito = () => {
   document.querySelector('.cant--carrito').textContent = total;
 };
 
-cargarProductos();
+cargarProductos1();
 mostrarCarrito();
 escucharBotonesSidebar();
-/* const idCart = document.querySelector('#idCart'); */
-
-/* class Producto {
-  constructor(producto, descripcion, precio) {
-    this.producto = producto;
-    this.imagen;
-    this.descripcion = descripcion;
-    this.precio = precio;
-  }
-}
-
-const producto1 = new Producto(
-  'pincel',
-  'Pincel de calidad premium para crear tus mejores obras de arte',
-  400
-);
-const producto2 = new Producto(
-  'microfono',
-  'Si te gusta cantar, este producto es para vos',
-  1000
-);
-const producto3 = new Producto(
-  'celular',
-  'Si te gusta crear contenido, este producto es para vos',
-  20000
-);
-
-const productos = [producto1, producto2, producto3];
-const divProductos = document.getElementById('idProductos2');
-
-productos.forEach((productosEnArray, indice) => {
-  divProductos.innerHTML += `<div class="card" id="productosEnArray${indice}" style="width: 18rem;">
-  <img src="" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">${productosEnArray.producto}</h5>
-    <p class="card-text">${productosEnArray.descripcion}</p>
-    <p> ${productosEnArray.precio}</p>
-    <button onClick="agregarProducto(${indice})" name="idAddCart" class="btn btn-primary">Agregar al Carrito</button>
-  </div>
-</div>
-`;
-});
-let listaDeProductos = [];
-let agregarProducto = (indice) => {
-  let carrito = document.getElementById('idCarrito');
-  let nuevo = document.createElement('div');
-  nuevo.innerText = productos[indice].producto + ' ' + productos[indice].precio;
-  nuevo.classList.add('fondoAzul');
-  carrito.appendChild(nuevo);
-  listaDeProductos.push(productos[indice]);
-  localStorage.setItem('carrito', JSON.stringify(listaDeProductos));
-};
- */
-/* console.log(productos[indice].descripcion); */

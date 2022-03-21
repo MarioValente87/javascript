@@ -162,17 +162,21 @@ button {
 }
 /* SOBRE MI */
 .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
 .container img {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   object-fit: contain;
   object-position: center center;
-  width: 90%;
+  width: 40%;
   height: auto;
   border-radius: 10rem;
   justify-self: center;
@@ -206,8 +210,7 @@ button {
 
 #main {
   border: 1px solid red;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
 }
 
 /* SIDEBAR */
