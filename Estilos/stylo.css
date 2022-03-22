@@ -239,47 +239,68 @@ button {
 }
 
 #main {
-  border: 1px solid red;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-/* SIDEBAR */
-.sidebar {
+  position: relative;
+  margin-top: 10px;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
-  position: absolute;
-  box-shadow: 10px 10 px 15px
-    rgba(270deg, #12a4b6 0%, #8ddf6d 37.25%, #941d8e 100%);
-  width: 30%;
-  visibility: hidden;
-  left: 70%;
-  top: 10.5%;
-  background-color: aqua;
-}
-.active {
-  visibility: visible;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
 }
 
 /* cards del e-commers */
 
 .caja {
   margin: auto;
-  width: 300px;
+  width: 280px;
+  background-color: gainsboro;
+}
+
+.cajaImg {
+  position: relative;
+  width: 100%;
+  height: 310px;
+  overflow: hidden;
 }
 
 .caja--img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  border: 3px solid blueviolet;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s ease-in-out;
+}
+
+.caja:hover .caja--img {
+  transform: scale(1.5);
 }
 
 .caja--datos {
   text-align: center;
-  background-color: #941d8e;
+  padding: 10px;
 }
+
+.caja--datos .nombre {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin: 5px 0;
+}
+
+.caja--datos .precio {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+  background-color: grey;
+}
+
 .btn-agregar {
+  width: 50%;
+  border-radius: 25%;
+  height: 40px;
   background-color: red;
 }
 
@@ -295,4 +316,23 @@ button {
   border: 1px solid red;
   color: white;
   font-weight: bold;
+}
+
+/* SIDEBAR */
+.sidebar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  position: absolute;
+  box-shadow: 10px 10 px 15px
+    rgba(270deg, #12a4b6 0%, #8ddf6d 37.25%, #941d8e 100%);
+  width: 30%;
+  visibility: hidden;
+  left: 70%;
+  top: 10.5%;
+  background-color: aqua;
+  z-index: 1;
+}
+.active {
+  visibility: visible;
 }

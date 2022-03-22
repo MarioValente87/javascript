@@ -28,7 +28,9 @@ async function cargarProductos1() {
 cargarProductos1().then((productos) => {
   productos.forEach((element) => {
     main.innerHTML += ` <div class="caja">
+    <div class="cajaImg">
     <img class="caja--img" src="../productos/${element.img}">
+    </div>
     <div class="caja--datos">
     <p class="nombre">${element.nombre}</p>
     <p class="precio">$ <span> ${element.precio}</span></p>
