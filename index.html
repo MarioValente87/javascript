@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="./Estilos/stylo.css" />
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link
@@ -62,30 +63,26 @@
 
 </section>
  
- 
+ <!-- =====GALERIA CON LIBERIA JS SWIPER======= -->
 <section>
   <h2 class="tituloG">Galeria</h2>
-  <div id="galeria" class="galeria">
-<img src="./imagenes/agos1.jpeg" alt="">
-<img src="./imagenes/agos2.jpeg" alt="">
-<img src="./imagenes/agos3.jpeg" alt="">
-<img src="./imagenes/agos4.jpeg" alt="">
-<img src="./imagenes/agos5.jpg" alt="">
-<img src="./imagenes/agos6.jpg" alt="">
-<img src="./imagenes/agos7.jpg" alt="">
-<img src="./imagenes/agos8.jpg" alt="">
-</div>
-
-<section id="contenedor-principal">
-  <div  id="contenedor-interno">
-    <img id="img-activa" src="./imagenes/agos1.jpeg" alt="">
-  <button id="btn-cierra" type="button">X</button>
-  <button id="btn-retrocede" type="button">&lt;</button>
-  <button id="btn-adelanta" type="button">&gt;</button>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="./imagenes/agos1.jpeg" alt=""></div>
+      <div class="swiper-slide"><img src="./imagenes/agos2.jpeg" alt=""></div>
+      <div class="swiper-slide"><img src="./imagenes/agos3.jpeg" alt=""></div>
+      <div class="swiper-slide"><img src="./imagenes/agos4.jpeg" alt=""></div>
+      <div class="swiper-slide"><img src="./imagenes/agos5.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="./imagenes/agos6.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="./imagenes/agos7.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="./imagenes/agos8.jpg" alt=""></div>
+      
+    </div>
+    <div class="swiper-pagination"></div>
   </div>
 </section>
 
-</section>
+
 
 
 
@@ -102,8 +99,7 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="./index.js"></script>
-    
-  </body>
+      </body>
 </html>
