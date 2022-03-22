@@ -37,14 +37,15 @@ cargarProductos1().then((productos) => {
     </div>
     `;
   });
+  const btnAgregar = document.querySelectorAll('.btn-agregar');
+  btnAgregar.forEach((e) =>
+    e.addEventListener('click', (e) => {
+      let cardPadre = e.target.parentElement;
+      agregarAlCarrito(cardPadre);
+    })
+  );
 });
-const btnAgregar = document.querySelectorAll('.btn-agregar');
-btnAgregar.forEach((e) =>
-  e.addEventListener('click', (e) => {
-    let cardPadre = e.target.parentElement;
-    agregarAlCarrito(cardPadre);
-  })
-);
+
 //como vamos a usar varias veces la alerta, conviene tenerla en una función
 const swalToast = (texto, color, posicion) => {
   Swal.fire({

@@ -161,8 +161,9 @@ button {
   font-size: 3rem;
 }
 /* SOBRE MI */
-.container {
+.container1 {
   display: flex;
+  border: 2px solid rebeccapurple;
   /* grid-template-columns: 1fr 1fr 1fr; */
   flex-direction: row;
   flex-wrap: wrap;
@@ -170,7 +171,7 @@ button {
   align-items: center;
 }
 
-.container img {
+.container1 img {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -203,65 +204,6 @@ button {
   border: none;
   background: none;
 }
-/* CARRITO */
-.btn-carrito {
-  cursor: pointer;
-}
-
-#main {
-  border: 1px solid red;
-  display: flex;
-}
-
-/* SIDEBAR */
-.sidebar {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
-  position: absolute;
-  box-shadow: 10px 10 px 15px
-    rgba(270deg, #12a4b6 0%, #8ddf6d 37.25%, #941d8e 100%);
-  width: 30%;
-  visibility: hidden;
-  left: 70%;
-  top: 10.5%;
-  background-color: aqua;
-}
-.active {
-  visibility: visible;
-}
-
-/* cards del e-commers */
-
-.caja {
-  margin: auto;
-}
-
-.caja--img {
-  width: 100%;
-  border: 3px solid blueviolet;
-}
-
-.caja--datos {
-  text-align: center;
-}
-.btn-agregar {
-  background-color: red;
-}
-
-/* cards de carrito */
-.caja--carrito {
-  width: 200px;
-  text-align: center;
-}
-.caja-carrito-img {
-  width: 150px;
-}
-.caja-carrito-datos {
-  border: 1px solid red;
-  color: white;
-  font-weight: bold;
-}
 
 /* CLASES PARA QUE FUNQUE EL MODAL */
 .hidden {
@@ -289,4 +231,68 @@ button {
 
 .fondoAzul {
   color: aqua;
+}
+
+/************************** SECCIÓN PRODUCTOS ************************/
+.btn-carrito {
+  cursor: pointer;
+}
+
+#main {
+  border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+/* SIDEBAR */
+.sidebar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  position: absolute;
+  box-shadow: 10px 10 px 15px
+    rgba(270deg, #12a4b6 0%, #8ddf6d 37.25%, #941d8e 100%);
+  width: 30%;
+  visibility: hidden;
+  left: 70%;
+  top: 10.5%;
+  background-color: aqua;
+}
+.active {
+  visibility: visible;
+}
+
+/* cards del e-commers */
+
+.caja {
+  margin: auto;
+  width: 300px;
+}
+
+.caja--img {
+  width: 100%;
+  border: 3px solid blueviolet;
+}
+
+.caja--datos {
+  text-align: center;
+  background-color: #941d8e;
+}
+.btn-agregar {
+  background-color: red;
+}
+
+/* cards de carrito */
+.caja--carrito {
+  width: 200px;
+  text-align: center;
+}
+.caja-carrito-img {
+  width: 250px;
+}
+.caja-carrito-datos {
+  border: 1px solid red;
+  color: white;
+  font-weight: bold;
 }
