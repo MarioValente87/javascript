@@ -1,3 +1,12 @@
+/* SCROLL-REVEAL */
+window.sr = ScrollReveal();
+
+sr.reveal('.container1', {
+  duration: 4000,
+  origin: 'bottom',
+  distance: '100px',
+});
+
 /* SWIPER */
 
 var swiper = new Swiper('.swiper-container', {
