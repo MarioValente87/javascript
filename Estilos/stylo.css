@@ -200,7 +200,7 @@ header {
   padding-bottom: 50px;
   display: flex;
   background: #000;
-  min-height: 90vh;
+  min-height: 50vh;
   padding-bottom: 200px;
   overflow-x: hidden;
 }
@@ -217,7 +217,8 @@ header {
 .swiper-slide img {
   display: block;
   width: 100%;
-  aspect-ratio: 1/1;
+  height: fit-content;
+  /* aspect-ratio: 1/1 */
 }
 
 /* ***************************MARCAS*************************************** */
@@ -333,6 +334,39 @@ header {
   }
 }
 
+/* FOOTER */
+.grid__footer {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__socialicons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.footer__socialicons li {
+  list-style: none;
+}
+
+.footer__socialicons li a {
+  font-size: 2em;
+  color: white;
+  margin: 0 15px;
+  display: inline-block;
+}
+
+.footer__socialicons li a:hover {
+  transform: translateY(-10px);
+}
+
+.grid__footer p {
+  color: white;
+}
 /************************** SECCIÓN PRODUCTOS ************************/
 .btn-carrito {
   cursor: pointer;
@@ -343,7 +377,7 @@ main {
 
 #main {
   position: relative;
-  margin-top: 10px;
+  margin-top: 76px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

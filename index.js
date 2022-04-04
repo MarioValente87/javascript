@@ -26,9 +26,29 @@ window.addEventListener('scroll', () => {
 window.sr = ScrollReveal();
 
 sr.reveal('.container1', {
+  duration: 2000,
+  interval: 106,
+  origin: 'left',
+  distance: '150%',
+});
+
+sr.reveal('.cajaTexto', {
   duration: 4000,
-  origin: 'bottom',
+  origin: 'right',
   distance: '100px',
+});
+
+sr.reveal('.container2', {
+  duration: 2000,
+  interval: 106,
+  origin: 'rigth',
+  distance: '150%',
+});
+
+sr.reveal('.modelo-caja', {
+  distance: '0px',
+  opacity: 0,
+  duration: 5000,
 });
 
 /* SWIPER */

@@ -1,4 +1,4 @@
-/* Barra de navegación */
+/* BARRA DE NAVEGACIÓN */
 const body = document.body;
 let lastScroll = 0;
 
