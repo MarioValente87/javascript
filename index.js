@@ -1,3 +1,27 @@
+/* Barra de navegación */
+const body = document.body;
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+  if (currentScroll <= 0) {
+    body.classList.remove('scroll-up');
+    return;
+  }
+
+  if (currentScroll > lastScroll && !body.classList.contains('scroll-down')) {
+    body.classList.remove('scroll-up');
+    body.classList.add('scroll-down');
+  } else if (
+    currentScroll < lastScroll &&
+    body.classList.contains('scroll-down')
+  ) {
+    body.classList.remove('scroll-down');
+    body.classList.add('scroll-up');
+  }
+  lastScroll = currentScroll;
+});
+
 /* SCROLL-REVEAL */
 window.sr = ScrollReveal();
 
@@ -27,6 +51,28 @@ var swiper = new Swiper('.swiper-container', {
     clickable: true,
   },
 });
+
+/* ********FORMULARO DE CONTACTO*************** */
+
+const $form = document.querySelector('#form');
+const $buttonMailTo = document.querySelector('#mailto');
+
+$form.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const form = new FormData(this);
+  console.log(form.get('name'));
+  $buttonMailTo.setAttribute(
+    'href',
+    `mailto:mariovalente2005@gmail.com?subject=${form.get(
+      'name'
+    )} Correo: ${form.get('email')} Celular: ${form.get(
+      'telefono'
+    )} Asunto: ${form.get('asunto')}&body=${form.get('mensaje')}`
+  );
+  $buttonMailTo.click();
+}
 
 /*Variables*/
 
@@ -69,4 +115,4 @@ const openModal = () => {
   });
 };
 
-btnsOpenModal.addEventListener('click', openModal);
+/* btnsOpenModal.addEventListener('click', openModal); */
