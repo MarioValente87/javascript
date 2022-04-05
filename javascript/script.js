@@ -143,6 +143,7 @@ const mostrarCarrito = () => {
   });
   localStorage.setItem('carrito', JSON.stringify(carrito));
   aumentarNumeroCantidadCarrito();
+  calcularTotal();
 };
 
 const restarProducto = (productoRestar) => {
@@ -179,6 +180,51 @@ const escucharBotonesSidebar = () => {
 const aumentarNumeroCantidadCarrito = () => {
   let total = carrito.reduce((acc, ite) => acc + ite.cantidad, 0);
   document.querySelector('.cant--carrito').textContent = total;
+};
+
+const calcularTotal = () => {
+  if (carrito.length !== 0) {
+    let total = carrito.reduce((acc, ite) => acc + ite.precio, 0);
+    divTotal = document.createElement('div');
+    divTotal.className = 'caja';
+    divTotal.id = 'total--compra';
+    divTotal.innerHTML = `<p>TOTAL ${total}</p><button> Finalizar compra</button>`;
+    sidebar.appendChild(divTotal);
+
+    let botonFinalizar = document.querySelector('#total--compra');
+    botonFinalizar.onclick = () => {
+      const mixin = Swal.mixin();
+      mixin
+        .fire({
+          title: 'Complete con sus datos',
+          html: `<input id= "tarjeta" type="number" class="swal2-input" placeholder="Nro Tarjeta"> </br>
+        <input id= "domicilio" type="text" class="swal2-input"placeholder="Domicilio">
+        <p>Total:$ ${total}</p>`,
+          confirmButtonText: 'Comprar',
+          showCancelButton: true,
+          cancelButtonText: 'Cancelar',
+          showCloseButton: true,
+          allowOutsideClick: false,
+
+          preConfirm: () => {
+            let domicilio = Swal.getPopup().querySelector('#domicilio').value;
+            if (!domicilio) {
+              Swal.showValidationMessage('Por, favor complete sus datos');
+            }
+            return domicilio;
+          },
+        })
+        .then((response) => {
+          if (response.isConfirmed) {
+            mixin.fire(
+              'Compra realizada',
+              'El pedido será enviado a ' + response.value,
+              'success'
+            );
+          }
+        });
+    };
+  }
 };
 
 cargarProductos1();
