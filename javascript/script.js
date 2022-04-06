@@ -186,10 +186,15 @@ const calcularTotal = () => {
   if (carrito.length !== 0) {
     let total = carrito.reduce((acc, ite) => acc + ite.precio, 0);
     divTotal = document.createElement('div');
-    divTotal.className = 'caja';
+    divTotal.className = 'cajaFin';
     divTotal.id = 'total--compra';
     divTotal.innerHTML = `<p>TOTAL ${total}</p><button> Finalizar compra</button>`;
     sidebar.appendChild(divTotal);
+
+    function vaciarCarrito() {
+      carrito = [];
+      mostrarCarrito();
+    }
 
     let botonFinalizar = document.querySelector('#total--compra');
     botonFinalizar.onclick = () => {
@@ -208,7 +213,8 @@ const calcularTotal = () => {
 
           preConfirm: () => {
             let domicilio = Swal.getPopup().querySelector('#domicilio').value;
-            if (!domicilio) {
+            let tarjeta = Swal.getPopup().querySelector('#tarjeta').value;
+            if (!domicilio || !tarjeta) {
               Swal.showValidationMessage('Por, favor complete sus datos');
             }
             return domicilio;
@@ -222,6 +228,7 @@ const calcularTotal = () => {
               'success'
             );
           }
+          vaciarCarrito();
         });
     };
   }
